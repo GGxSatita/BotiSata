@@ -1,0 +1,7 @@
+{
+  "name": "satAPP",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
