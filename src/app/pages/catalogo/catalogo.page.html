@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar class="ion-text-center">
+    <h1>Catalogo</h1>
+  </ion-toolbar>
+
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/" text="salir"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let producto of datos"
+    detail="true"
+    [routerLink]="['/detalle']"
+    [queryParams]="{
+      id : producto.id,
+      nombre : producto.nombre,
+      precio : producto.precio,
+      descripcion : producto.descripcion,
+      imagen : producto.imagen,
+      marca : producto.marca
+    }"
+    >
+    <ion-avatar>
+      <img [src]="producto.imagen" />
+    </ion-avatar>
+    <ion-label>
+      <h4>{{producto.nombre}}</h4>
+      <p>$ {{producto.precio}}</p>
+    </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
